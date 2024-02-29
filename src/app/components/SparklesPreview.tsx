@@ -1,8 +1,12 @@
 "use client";
 import React from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
+import CountdownTimer from "./timer";
 
 export function SparklesPreview() {
+
+  const targetDate = new Date('2024-03-01T00:00:00');
+
   return (
     <div className="h-[100vh] relative w-full bg-black flex flex-col items-center justify-center  overflow-hidden rounded-md">
       <div className="w-full absolute inset-0 h-screen">
@@ -11,7 +15,7 @@ export function SparklesPreview() {
           background="transparent"
           minSize={0.6}
           maxSize={1}
-          particleDensity={50}
+          particleDensity={25}
           className="w-full h-full"
           particleColor="#FFFFFF"
         />
@@ -24,6 +28,10 @@ export function SparklesPreview() {
       <svg className="w-auto">
   <text x="18" y="30" className=" text-center stroke-2 text-4xl stroke-slate-500 fill-transparent font-bold">Coming Soon!</text>
 </svg>
+
+<div className=" flex gap-10 justify-center items-center">
+      <CountdownTimer targetDate={targetDate} />
+    </div>
 
     </div>
   );
